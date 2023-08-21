@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome DOC!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="/static/js/qrcode.js">
+  </script>
+  <script type="text/javascript" src="/static/js/html5-qrcode.js">
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+    .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #047BD5;
+    }
+
+    .nav-buttons {
+      display: flex;
+    }
+
+    .nav-buttons button {
+      background-color: #047BD5;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nav-buttons a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-buttons button:last-child {
+      margin-right: 0;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      /* text-align: center; Center the content in table cells */
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+      /* opacity: 0.85; */
+    }
+
+    tr:nth-child(odd) {
+      background-color: white;
+      /* opacity: 0.85; */
+    }
+
+    p,
+    ul {
+      font-family: 'Poppins';
+      font-size: x-large;
+      letter-spacing: 3px;
+      font-style: oblique;
+      line-height: 150%;
+    }
+
+    body {
+      background-image: url("/static/img/docacc.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    .card {
+      width: 20rem;
+      height: 25rem;
+      box-shadow: 40em;
+      opacity: 0.85;
+      background-color: white;
+      text-align: center;
+      padding: 20px;
+      margin: 0 auto;
+    }
+
+    .card i {
+      font-size: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">NIRAMAYA</div>
+    <div class="nav-buttons">
+      <button><a class="navbar-brand" href="/back">Go to Dashboard</a></button>
+      <button><a class="navbar-brand" href="/logout">Logout</a></button>
+    </div>
+  </div>
+
+  <br>
+
+  <center>
+    <h1>ACCOUNT INFORMATION</h1>
+    <br><br>
+    <div class="card">
+      <i class="fa fa-user fa-x-large" aria-hidden="true"></i>
+      <div class="card-body">
+        {% if session['user'].find('DOC')!=-1 %}
+        <center> <h2>Dr. {{post.docname}}</h2></center>
+        {% endif %}
+      </div>
+    </div>
+    <br>
+    <br>
+  </center>
+  <br><br>
+
+  <table>
+    {% for i in post %}
+    <tr>
+      <td><strong>{{ i }}</strong></td>
+      <td>{{ post[i] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <br><br><br><br>
+
+  <center>
+    <div class="container">
+      <div class="list-group-w-50">
+        <a class="list-group-item list-group-item-action active" style="background-color: black;">
+          <h3>GUARDIAN ACCOUNT</h3>
+        </a>
+        <a href="/linkedacc" class="list-group-item list-group-item-action">LINKED ACCOUNTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img
+            src="/static/img/link.png"></a>
+      </div>
+    </div>
+  </center>
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Doctors</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+    body {
+      margin: 0;
+      background-color: #f2f2f2;
+      font-family: 'Poppins';
+    }
+
+    .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #047BD5;
+    }
+
+    .nav-buttons {
+      display: flex;
+    }
+
+    .nav-buttons button {
+      background-color: #047BD5;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+	.nav-buttons a{
+		color:white;
+    text-decoration:none;}
+        
+    .nav-buttons button:last-child {
+      margin-right: 0;
+    }
+
+    /* .search-bar {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .search-input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn-primary {
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    } */
+    .heading {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    .search-bar {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .search-input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn-primary {
+      padding: 10px 20px;
+      background-color: #F8E831;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 12px;
+    }
+
+    *{
+    margin: 0px;
+    padding: 0px;
+  }
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+} */
+
+h1{
+  background-color: #047BD5;
+  color:white;
+  padding: 20px;
+}
+
+.card {
+    display: flex; /* Use flex display to control layout */
+    width: 600px; /* Increase width to accommodate image and information */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px; /* Add margin to separate image from information */
+}
+
+.card-info {
+    flex: 1; /* Flex-grow to expand to fill remaining space */
+}
+
+.card h2 {
+    margin: 10px 0;
+    color: black;
+    text-align: left;
+}
+
+.card p {
+    margin: 5px 0;
+    color: black;
+    text-align: left;
+}
+
+.card p:first-child {
+    font-weight: bold;
+}
+
+.card p:not(:first-child) {
+    margin-top: 8px;
+}
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">NIRAMAYA</div>
+    <div class="nav-buttons">
+      <button><a class="navbar-brand" href="/">Home</a></button>
+      <!-- <button><a class="navbar-brand" href="/logout">Logout</a></button> -->
+    </div>
+  </div>
+
+  <!-- <div class="heading">
+    <h1>Search Doctors</h1>
+  </div> -->
+
+  <form action="/search" method="POST">
+    <div class="search-bar">
+      <input type="text" class="search-input" name="name" placeholder="Enter doctor's name or specialization">
+      <button type="submit" class="btn btn-primary" > Search</button>
+    </div>
+  </form>
+  {% for p in doctors%}
+    <div class="card">
+        <img src="https://img.freepik.com/free-psd/3d-illustration-doctor-holding-heart_1419-2769.jpg?w=740&t=st=1691521053~exp=1691521653~hmac=e522d6b824e9e98cca61c83e8aef91bb91c3edcc329223071ff85437649431b7" alt="Doctor">
+        <div class="card-info">
+            <h2>Dr. {{ p.docname }}</h2>
+            <p class="lead"><b>{{ p.specialization }} Specialist</b></p><br>
+            <p id="font"><b>Qualification&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{ p.qualification }}</p><br>
+            <p><b>Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{ p.address }}</p><br>
+            <!-- <p><b>More About {{ p.docname }}:</b> {{ p.moreabout }}</p> -->
+            <p><b>For Details Contact &nbsp;&nbsp; :</b> {{ p.number }}</p><br>
+            <i class="fa-solid fa-star" style="color: #eeff00;"></i> verified provider
+        </div>
+    </div>
+{% endfor %}
+</body>
+
+</html>

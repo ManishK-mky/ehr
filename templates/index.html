@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>NIRAMAYA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" href="/static/css/main.css" /> -->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+        /* Reset some default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+        }
+
+        /* Apply a background color and font to action links */
+        .actions a {
+            background-color: #F8E831;
+            font-family: 'Poppins', sans-serif;
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        /* Remove bullets from unordered list */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Style the header */
+        #header {
+            text-align: center;
+            padding: 20px 0;
+			background: transparent;
+        }
+
+        #header h1 a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Style the banner */
+        #trial {
+            height: 70vh;
+            background-size: cover;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        #banner h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            color: rgb(53, 53, 53);
+            margin-bottom: 10px;
+        }
+
+        #banner p {
+            font-size: 18px;
+            color: rgb(53, 53, 53);
+            margin-bottom: 30px;
+        }
+
+        /* Style the three sections */
+        #three,
+        #four {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        #three h2,
+        #four h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #three p,
+        #four p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Style the contact form */
+        #four {
+            background-color: #047BD5;
+            color: rgb(53, 53, 53);
+        }
+
+        .form-container {
+            width: 75%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-container input[type='text'],
+        .form-container input[type='email'],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+        }
+
+        /* Style the footer */
+        #footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color:#1b85d6;
+        }
+
+        #footer a {
+            color: white;
+        }
+
+        /* Make buttons horizontal */
+        .actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .actions li {
+            margin: 5px;
+        }
+
+        .getin{
+            width:600px ; height:40px;
+            border-radius:4px;
+            border:none;
+            margin:5px;
+            padding-left:12px;}
+            
+            .getinmsg{
+            width:600px ; height:100px;
+            border-radius:4px;
+            border:none;
+            margin:5px;
+            padding:45px 0px 0px;}
+        
+        .specials{
+        width:100px; height:40px;
+        border-radius:6px;
+        border:none;}
+        /*.special , .alt{
+            width:300px;} */
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="landing">
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1><a href="/">Niramaya</a></h1>
+    </header>
+    <!-- Banner -->
+    <div id="trial" style="background-image: url('/static/img/banner.jpg');">
+        <section id="banner">
+            <i class="fa-solid fa-hospital"></i>
+            <h2>NIRAMAYA</h2>
+            <p>WELCOME!</p>
+            <ul class="actions">
+                &nbsp;<li><a href="/domain" class="button big special">Sign In</a></li> &nbsp; &nbsp;
+                <li><a href="/signup" class="button big special">Sign Up</a></li> &nbsp; &nbsp;
+                <li><a href="/viewmore" class="button big special">Doctor</a></li> &nbsp;
+                <li><a href="/searchpatient" class="button big special">Patient</a></li> &nbsp;&nbsp;
+                <!-- <li><a href="/organ_donor" class="button big special">Donor Card</a></li> &nbsp;  -->
+            </ul>
+        </section>
+    </div>
+    <!-- Three BUTTONS -->
+    <section id="three" class="wrapper style3 special">
+        <div class="inner">
+            <header class="major narrow ">
+                <h2>Nirmaya??</h2>
+                <p>
+                    NIRAMAYA is an innovative Electronic Health Record (EHR) system built on blockchain technology, providing a
+                    user-friendly platform for managing health records with improved formatting and seamless sharing capabilities
+                    across healthcare centers. Our primary goal is to empower patients by giving them full control over their
+                    medical data, enabling them to share a comprehensive and up-to-date version of their health records
+                    effortlessly.
+                </p>
+            </header>
+        </div>
+    </section>
+    <!-- Four OUTREACH -->
+    <section id="four" class="wrapper style2 special">
+        <div class="inner">
+            <header class="major narrow">
+                <h2>Get in touch</h2>
+                <p>reach us out by filling up</p>
+            </header>
+            <form action="#" method="POST">
+                <div class="container 75%">
+                    <div class="row uniform 50%">
+                        <div class="6u 12u$(xsmall)">
+                            <input name="name" class="getin" placeholder="Name" type="text" />
+                        </div>
+                        <div class="6u$ 12u$(xsmall)">
+                            <input name="email" class="getin" placeholder="Email" type="email" />
+                        </div>
+                        <div class="12u$">
+                            <textarea name="message" class="getinmsg" placeholder="Message" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" class="specials" value="Submit" /></li>
+                    <li><input type="reset" class="specials" value="Reset" /></li>
+                </ul>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="copyright">
+                <li>&copy; Manish.</li>
+                <li><a href="">Presented by Manish</a>.</li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/skel.min.js"></script>
+    <script src="static/js/util.js"></script>
+    <script src="static/js/main.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOCTOR INFO</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body id="hello">
+
+    <section id="header" class="jumbotron text-center">
+        <h3 class="display-4"> <font color="white"> </font> </h3>
+    </section>
+
+    <div class="container">
+        <form action="/schedule" method="POST" class="jumbotron">
+            <div class="form-group">
+                <label for="docid">DOCTOR ID </label>
+                <input type="text" class="form-control" id="docid" name="docid" placeholder="DOCTOR ID">
+            </div>
+            <div class="form-group">
+                <label for="name"> NAME </label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="NAME OF THE DOCTOR">
+            </div>
+            <div class="form-group">
+                <label for="clinic-address"> ADDRESS </label>
+                <input type="text" class="form-control" id="clinic-address" name="add" placeholder="ADDRESS OF THE CLINIC">
+            </div>
+            <div class="form-group">
+                <label for="clinic-location"> BRANCH </label>
+                <input type="text" class="form-control" id="clinic-location" name="add" placeholder="LOCATION OF THE CLINIC">
+            </div>
+
+            <button type="submit" class="btn btn-primary"> FIND SCHEDULE </button>
+        </form>
+
+        <section id="footer" class="jumbotron text-center">
+            <h4 class="display-4"><font color="black"> <marquee> <h2>GOD CANNOT BE EVERYWHERE, SO HE SENT DOCTORS WITH
+                        EXCELLENCE AND SELFLESSNESS </h2></marquee> </font></h4>
+        </section>
+    </div>
+
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+        body{
+            font-family: 'Poppins';
+        }
+        #header {
+            background: url("https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+        }
+    </style>
+
+    <style>
+        #hello {
+            padding: 25px;
+            background: url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80");
+            background-repeat: no-repeat;
+            background-size: 1700px;
+        }
+    </style>
+</body>
+
+</html>

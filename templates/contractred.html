@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome DOC!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous">
+      </script>
+      <script>
+      var container = $('div.pp');
+
+/* Set Function */
+function clickme() {
+  /* Set Progess Bar */
+  var progressBar = $('<div class="progress-bar"/>');
+    
+  /* Append Progress Bar to Container and Queue Animation */
+  container.append(progressBar).queue('example', function() {
+    /* Animate Progress Bar */
+    progressBar.animate({ width: '100%' }, 3000, function() {
+      /* Run Next Queue */
+      container.dequeue('example');
+    });
+  });
+
+  /* Fall Back if Nothing is Animating */
+  if(!progressBar.prevAll(':animated').length) {
+    container.dequeue('example');
+  }
+}</script>
+<script>
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        
+      }
+    }
+  }
+  document.getElementById("vals").innerHTML = "Generated...";
+}  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+  .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #047BD5;
+    }
+
+    .nav-buttons {
+      display: flex;
+    }
+
+    .nav-buttons button {
+      background-color: #047BD5;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+	.nav-buttons a{
+		color:white;
+        text-decoration:none;}
+        
+    .nav-buttons button:last-child {
+      margin-right: 0;
+    }
+
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+    p,
+    ul {
+      font-family: 'Poppins';
+      font-size: x-large;
+      letter-spacing: 3px;
+      font-style: oblique;
+      line-height: 150%;
+    }
+   
+  </style>
+
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">NIRAMAYA</div>
+    <div class="nav-buttons">
+      <button><a class="navbar-brand" href="/back">Go to Dashboard</a></button>
+      <button><a class="navbar-brand" href="/logout">Logout</a></button>
+    </div>
+  </div>
+     
+
+  
+  <br>
+
+ <center> <b><h1 id='vals'></h1></b></center>
+  <br>
+
+  <div id="myProgress">
+    <div id="myBar" class="progress-bar bg-success" ></div>
+  </div>
+  <br>
+  <center>
+    <div class="card" style="width: 50rem;">
+       
+        <div class="card-body">
+          <b><h5 class="card-title-dark">CONTRACT FOR {{posts.record }}</h5></b>
+          <p class="card-text">
+            <table class="table table">
+                <thead>
+                  <tr>
+                    <th scope="col">Index</th>
+                    <th scope="col">Value</th>
+                
+                  </tr>
+                </thead>
+              </p><form action="/conadd" method="POST">
+                <tbody>
+                    {% for i in posts %}
+                  <tr>
+                    <input type="hidden" name={{ i }} value={{ posts[i] }}>
+                    <td>{{ i }}</td>
+                    <td>{{ posts[i] }}</td>
+                    
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+         
+          <button onclick="move()" class="btn btn-primary" type="submit">Generate</button>
+        </form>
+        </div>
+      </div>
+      
+</center>
+
+<br>
+<br>
+
+  <br>
+
+
+  
+</body>
+
+</html>

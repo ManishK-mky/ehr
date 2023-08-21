@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome Citizen!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <style>
+/* ------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+.navbar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #047BD5;
+    }
+
+    .nav-buttons {
+      display: flex;
+    }
+
+    .nav-buttons button {
+      background-color: #047BD5;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+	.nav-buttons a{
+		color:white;
+        text-decoration:none;}
+        
+    .nav-buttons button:last-child {
+      margin-right: 0;
+    }
+/* ------------------------------ */
+    p,
+    ul {
+      font-family: 'Poppins';
+      font-size: x-large;
+      letter-spacing: 3px;
+      font-style: oblique;
+      line-height: 150%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">NIRAMAYA</div>
+    <div class="nav-buttons">
+      <button><a class="navbar-brand" href="/back">Go to Dashboard</a></button>
+      <button><a class="navbar-brand" href="/logout">Logout</a></button>
+    </div>
+  </div>
+
+  
+  <br>
+
+ <center> <b><h1>RECORDS ACCESS SECTION</h1></b></center>
+  
+  <br><br>
+  <center>
+
+  <div class='container'>
+      <div class='col'style='box-shadow: 40em;'>
+          <br><br>
+          <center>
+            <div class="card" style="width: 20rem; height: 25rem;box-shadow: 40em;;">
+              <!--<img src="/static/img/secure.jpg" class="card-img-top" alt="..." height='300' width='300'>-->
+              <div style="font-size: 200px;"><i class="fa fa-medkit fa-x-large" aria-hidden="true" ></i></div>
+
+            </div>
+          </center>
+        </div>
+
+  </div>
+<br><br>
+  <div class="card text-center">
+    <div class="card-header">
+      <h2>Enter ID to share record: </h2>
+    </div>
+    <form action='/sharerec' method="POST">
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <input class="card-text" name='accessor'>
+      <input type="hidden" name="owner" value={{ post['owner'] }}>
+      <input type="hidden" name="_id" value={{ post['_id' ] }}>
+      
+    </div>
+    <div class="card-footer text-muted">
+        <button type="submit" class="btn btn-primary">Share</button>
+    </div>
+  </form>
+  </div>
+</center>
+  
+  
+  
+</body>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body id="hello">
+
+<section id="header" class="jumbotron text-center">
+    <h2 class="display-4"><font color="black">SEARCH  FOR  A  DOCTOR</font></h2>
+  </section>
+
+  <form action="/search" method="POST">
+  	<div class="container">
+
+		  <div class="form-group">
+		    	<label for="specialized">I WANT TO CONSULT A DOCTOR</label>
+		    	<input type="text" class="form-control" id="sp" name="special" placeholder="SPECIALIZED IN">
+		  </div>
+			  <div class="form-group">
+			    <label for="address"> LOCATION </label>
+			    <input type="text" class="form-control" id="address" name="add" placeholder="LOCATION">
+			  </div>
+
+		  <!-- <b> INSURANCE TYPE </b>  -->
+		  <!-- <br>
+		  <br>
+		          <select name="insure" class="pay">
+			            <option value="self">Self-pay</option>
+			            <hr>
+			            <option value="new">New India</option>
+			            <option value="cap">Bajai capital</option> 
+			            <option value="cardio">Cardio-care</option>
+			            <option value="life">Life-insured</option>
+			            <option value="visitime"> Visitme</option>
+		          </select>
+		          
+          			<br>
+          			<br>
+          			<br> -->
+
+          <button type="submit" class="btn btn-primary" > SUBMIT </button>
+
+
+  	</div>
+
+
+
+
+  </form>
+
+
+  <section id="footer" class="jumbotron text-center">
+    <h2 class="display-4"><font color="blue"> <b>SPECIALIZATION INCLUDES</b> </font></h2>
+    <p><br>
+
+    	<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ALLERGY AND IMMUNOLOGY</th>
+      <th>ANESTHESIOLOGY</th>
+      <th><b>CARDIOLOGY</b></th>
+      <th>CHILD PSYCHIATRY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>DERMATOLOGY</th>
+      <td><b>RADIOLOGY</b></td>
+      <td><b>EMERGENCY MEDICINE</b></td>
+      <td><b>PSYCHOLOGY</b></td>
+    </tr>
+    <tr>
+      <th>GENERAL SURGERY</th>
+      <td><b>HAEMATOLOGY</td><b></td>
+      <td><b>PRIMARY CARE</b></td>
+      <td><b>NEUROSCIENCE</b></td>
+    </tr>
+    <tr>
+      <th>NEPHROLOGY</th>
+      <td><b>NUTRITIONIST</b></td>
+      <td><b>GYNECOLOGY</b></td>
+      <td><b>OPTHAMOLOGY</b></td>
+    </tr>
+  </tbody>
+</table>
+     </p>
+  </section><br><br>
+
+
+  
+  <!-- ... Existing CSS links ... -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+    /* Add styles for the Self-pay option */
+
+    body{
+      font-family: 'Poppins';
+    }
+
+    select[name="insure"] option[value="self"] {
+      width: 100%;
+    }
+
+    /* Add background image and positioning for the header section */
+    #header {
+      background: url("/static/img/flip.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px; /* Adjust the height as needed */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Add background image and positioning for the main content section */
+    #hello {
+      padding: 25px;
+      background: url("https://image.freepik.com/free-photo/smoke-abstract-background-light-pastel-colors_89245-89.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px; /* Adjust the height as needed */
+    }
+
+    /* Style the "SEARCH FOR A DOCTOR" heading */
+    #header h2.display-4 {
+      font-size: 48px; /* Increase the font size */
+      color: black;
+      /* text-shadow: 2px 2px #000000; Add a text shadow for better visibility */
+    }
+
+    /* Style the footer section */
+    #footer {
+      background-color: #f9f9f9;
+      padding: 25px;
+    }
+
+    /* Center the table inside the footer */
+    #footer table {
+      margin: 0 auto;
+    }
+
+    /* Style the footer table headers */
+    #footer th {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Style the footer table data cells */
+    #footer td {
+      font-size: 16px;
+    }
+    
+    .pay{
+    height:36px;
+    width:100%;
+    border:1px solid #ccc;
+    border-radius:6px;}
+  </style>
+</body>
+</html>

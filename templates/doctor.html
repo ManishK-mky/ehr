@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>DOCTOR SIGNUP</title>
+<head>
+<body>
+
+  
+    <div class="loginbox">
+    <img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-and-shapes-3/177800/129-512.png" class="avatar">
+        <h1>DOCTOR LOGIN</h1>
+       <form action='/docver' method="POST">
+            <p>Doctor Name</p>
+            <input type="text" name="doc" autocomplete="off">
+             <p>Gender</p>
+            <input type="text" name="gen" >
+            <p>Date Of Birth</p>
+            <input type="date" name="dob" class="age"><font color="black"></font>
+            <p>Age</p>
+            <input type="number" name="age" autocomplete="off" class="age">
+              <p>Specialization</p>
+            <input type="text" name="special" autocomplete="off">
+              <p>Workplace(Location)</p>
+            <input type="text" name="add"  autocomplete="off">
+              <p>Qualification</p>
+            <input type="text" name="qualific" autocomplete="off">
+             <p>Graduated From</p>
+            <input type="text" name="grad" autocomplete="off">
+             <p>Further Details If Any</p>
+            <input type="text" name="more" autocomplete="off">
+             <p>Workplace Phone Number</p>
+            <input type="text" name="num" autocomplete="off">
+             <p>Personal Contact Number</p>
+            <input type="text" name="n" autocomplete="off">
+             <p>Password</p>
+            <input type="password" name="pwd" >
+              <br>
+             <input type="submit" name="" value="SIGN UP">
+      </div> 
+        </form>
+        
+    </div>
+
+</body>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    /* background: url(https://steamuserimages-a.akamaihd.net/ugc/922547399907984052/EE76D1B6C6741485769FB238C7B597C3189D0C3C/); */
+    background-color:#047BD5;
+    background-size: 1500px;
+    font-family: 'Poppins';
+}
+
+.loginbox{
+    width: 540px;
+    height: 1170px;
+    background: #ffffff;
+    color: #222222;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    margin-top:350px;
+    border-radius: 6px;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.age{
+
+height:40px;
+  border:1px solid #ccc;
+}
+
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 33px;
+}
+
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border:1px solid #ccc;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #363636;
+    font-size: 16px;
+    border-radius: 6;
+}
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(58, 170, 215); 
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+  cursor: pointer;
+    background: #3dc6db;
+    color: rgb(66, 66, 66);
+}
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.loginbox a:hover
+{
+  color:rgb(45, 45, 45);
+}
+
+</style>
+</html>

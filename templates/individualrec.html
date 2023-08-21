@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome DOC!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <style>
+
+    /* -------------------------- */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+    .navbar {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px; /* Increase the padding to make it larger */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 30px; /* Increase the font size to make it larger */
+      font-weight: bold;
+      color: #047BD5;
+    }
+
+    .nav-buttons {
+      display: flex;
+    }
+
+    .nav-buttons button {
+      background-color: #047BD5;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+	.nav-buttons a{
+		color:white;
+    text-decoration:none;}
+        
+    .nav-buttons button:last-child {
+      margin-right: 0;
+    }
+
+    
+
+    /* -------------------------- */
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%; /* Reduce the width of the table */
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px; /* Reduce the padding for cells */
+  font-size: 14px; /* Reduce the font size for cells */
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+p,
+ul {
+  font-family: 'Poppins';
+  font-size: x-large;
+  letter-spacing: 3px;
+  font-style: oblique;
+  line-height: 150%;
+}
+
+/* ... Previous CSS ... */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Increase the padding to make it larger */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make the navbar full-width */
+}
+
+/* ... Remaining CSS ... */
+
+
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+h1,
+h3 {
+  text-align: center;
+}
+
+table {
+  margin-top: 20px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* .btn-warning:hover {
+  background-color: #ffcd4a;
+} */
+
+  </style>
+
+</head>
+
+<body>
+  
+  <div class="navbar">
+    <div class="logo">NIRAMAYA</div>
+    <div class="nav-buttons">
+      <button><a class="navbar-brand" href="/back">Go to Dashboard</a></button>
+      <button><a class="navbar-brand" href="/logout">Logout</a></button>
+    </div>
+  </div>
+
+  <center> <b>
+      <h1>MEDICAL BLOCK RECORDS</h1>
+    </b></center><br><br>
+  
+
+
+    <center><h3>RECORD ID: {{post._id}} <br> <br> CREATED ON:  <b>{{post.timestamp}}</b></h3></center>
+      <table>
+    <tr>
+
+          {% for i in post %}
+          <tr>
+            
+            {% if i.find('SCAN')!=-1 %}
+                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ i }}</td>
+                     <td><a class='btn-btn-warning' href={{ "http://localhost:8080/ipfs/"+ post[i] }} target='_blank'>CLICK TO VIEW</a></td>
+           {% endif %}
+           {% if(i!='prev' and i!='hash'  and post[i]!='' and i.find('SCAN')==-1) %}
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ i }}</td>
+            <td>{{post[i]}}</td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tr>
+      </table>
+      <br><br>
+</body>
+
+</html>
