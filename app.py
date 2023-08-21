@@ -813,13 +813,7 @@ def access():
     accessor=session['user']
     '''url = "https://www.fast2sms.com/dev/bulk"
 
-    querystring = {"authorization":"4FzGm7K6haHIMiAJfuNsSwv50rT8cROE2UBCkP9yp3bZdXDlQqC0jLU1HVkQYE3sNdph24AIztabBcTO","sender_id":"PATREC","language":"english","route":"qt","numbers":"9789862702","message":"Doctor has requested for your record."}
-
-    headers = {
-    'cache-control': "no-cache"
-    }
-
-    response=requests.request("GET", url, headers=headers, params=querystring)'''
+   
  
     con={
     'accessor':accessor,
