@@ -58,7 +58,7 @@ def check_encrypted_password(password, hashed):
     return pwd_context.verify(password, hashed)
 
 #Mongodb setup
-client = pymongo.MongoClient("mongodb+srv://12known182002:KRDxIcz8ZLYEBGMi@cluster0.zgebqpc.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("YOUR DATABASE CONNECCTION")
 mydb=client["newDB"]
 
 mycol=mydb["Blockhead"]
@@ -190,77 +190,6 @@ def apply():
 
 
 
-'''
-#MEDREC form creation
-@app.route('/create', methods=['POST'])
-def createblock():
-    pid=request.form['pid']
-    doc= request.form['doc']
-    blood= request.form['blood']
-    pp= request.form['pp']
-    fast= request.form['fast']
-    serum= request.form['serum']
-    tot=request.form['tot']
-    thdl=request.form['thdl']
-    ldl=request.form['ldl']
-    rbc=request.form['rbc']
-    pulse=request.form['pulse']
-    myrow=mydb[pid]
-    patdoc= myrow.find()
-    ind=-1
-    for x in patdoc:
-        prev=x['hash']
-        ind=ind+1
-    ts=time.time()
-    st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-    block={
-        '_id':pid+'REC'+str(ind+1),
-        'owner':pid,
-        'doc':doc,
-        'gluc':pp,
-        'glucf':fast,
-        'serum':serum,
-        'blood':blood,
-        'chol': tot,
-        'thdl':thdl,
-        'ldl':ldl,
-        'rbc':rbc,
-        'pulse':pulse,
-        'prev': prev,
-        'timestamp':st
-
-
-    }
-
-    block_string = json.dumps(block, sort_keys=True)
-    hashval=sha256(block_string.encode()).hexdigest()
-    block={
-        '_id': pid+'REC'+str(ind+1),
-        'owner':pid,
-        'doc':doc,
-        'gluc':pp,
-        'glucf':fast,
-        'serum':serum,
-        'blood':blood,
-        'chol': tot,
-        'thdl':thdl,
-        'ldl':ldl,
-        'rbc':rbc,
-        'pulse':pulse,
-        'prev': prev,
-        'hash':hashval,
-        'timestamp':st
-
-    }
-    myrow.insert_one(block)
-    return render_template('newrec.html',post=block)
-
-
-#Options to create record
-@app.route('/medrecord')
-def medrecord():
-    return render_template('medrecord.html')
-'''
 
 
 #Different medical records
@@ -774,21 +703,6 @@ def viewrec():
         records.append(x)
     return render_template('records.html',posts=records)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Doctor
 
 #Doctor signup
@@ -906,9 +820,7 @@ def access():
     }
 
     response=requests.request("GET", url, headers=headers, params=querystring)'''
-    #myval=mydb['SMART_CONTRACT']
-    #ts=time.time()
-    #st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+ 
     con={
     'accessor':accessor,
     'owner': owner,
@@ -979,20 +891,6 @@ def display():
     if myview:
         return render_template('individualrec.html',post=myview)
     return redirect(url_for('back'))
-
-# @app.route('/searchbydate',methods=['post'])
-# def search_date():
-#     if 'user' not in session:
-#         return render_template('domain.html')
-#     block={
-#         '_id':request.form['_id'],
-#         'date':request.form['date']
-#     }
-#     mycol=mydb[request.form['owner']]
-#     myview=mycol.find(block)
-#     if myview:
-#         return render_template('individualrec.html',post=myview)
-#     return redirect(url_for('back'))
 
 
 @app.route('/share',methods=['post'])
@@ -1326,7 +1224,7 @@ def logout():
 
 
 
-clienth = pymongo.MongoClient("mongodb+srv://12known182002:KRDxIcz8ZLYEBGMi@cluster0.zgebqpc.mongodb.net/?retryWrites=true&w=majority")
+clienth = pymongo.MongoClient("YOUR DATABASE CONNECCTION")
 
 mydbh=clienth["blogdetails"]
 
